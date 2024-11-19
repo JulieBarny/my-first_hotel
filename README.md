@@ -1,0 +1,3 @@
+Pour ce projet en autonomie, j'ai décidé de créer un hôtel, le « Flamenco Beach Resort », un hôtel situé sur l'île de la Guadeloupe. Il propose une formule particulière concernant les chambres : seule une personne est autorisée par chambre pour optimiser le confort de chacun. 
+En visualisant ce projet, vous découvrirez les différentes activités proposées ainsi que le nombre de clients présents. Il est possible de voir les disponibilités des chambres pour d'éventuelles réservations. En tant que client de cet hôtel, vous pouvez, tout au long de la journée, profiter de toutes les activités 24 heures sur 24 (le service étant assuré par un personnel particulier : des robots). 
+Bonne visite ! 
