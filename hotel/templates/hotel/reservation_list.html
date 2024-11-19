@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Réservations</title>
+</head>
+<body>
+    <h1>Liste des Réservations</h1>
+    <ul>
+        {% for reservation in reservations %}
+            <li>
+                Réservation pour {{ reservation.personne.email }} - Chambre {{ reservation.chambre.id_chambre }}
+                <br> Du {{ reservation.date_debut_sejour }} au {{ reservation.date_fin_sejour }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Retour à l'accueil</a>
+</body>
+</html>

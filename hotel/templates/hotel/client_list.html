@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Clients</title>
+</head>
+<body>
+    <h1>Liste des Clients</h1>
+    <ul>
+        {% for client in clients %}
+            <li>
+                Client {{ client.id_personne }} - {{ client.email }} - {{ client.telephone }}
+                <br> Lieu actuel : {{ client.lieu }}
+                <br> État : {{ client.etat }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Retour à l'accueil</a>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Clients</title>
+    {% load static %}
+   
+    <link rel="stylesheet" href="{% static 'css/hotel.css' %}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .client-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .client-card {
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .client-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 10px auto;
+            display: block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .client-card h3 {
+            text-align: center;
+            color: #333;
+        }
+        .client-card p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste des Clients</h1>
+    <div class="client-container">
+        {% for client in clients %}
+        <div class="client-card">
+            {% if client.photo %}
+                <img src="{{ client.photo.url }}" alt="Photo de {{ client.email }}">
+            {% else %}
+                <img src="{% static 'images/default_client.jpg' %}" alt="Photo par défaut">
+            {% endif %}
+            <h3>Client {{ client.id_personne }}</h3>
+            <p><strong>Email :</strong> {{ client.email }}</p>
+            <p><strong>Téléphone :</strong> {{ client.telephone }}</p>
+            <p><strong>Lieu actuel :</strong> {{ client.lieu }}</p>
+            <p><strong>État :</strong> {{ client.etat }}</p>
+            <a href="{% url 'changer_lieu_client' client.id_personne %}" class="btn">Changer le Lieu</a>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'home' %}" class="btn" style="max-width: 200px; margin: 20px auto; display: block;">Retour à l'accueil</a>
+</body>
+</html>

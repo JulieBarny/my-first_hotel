@@ -1,0 +1,73 @@
+{% extends 'hotel/base.html' %}
+
+<!-- On charge les fichiers statiques -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/hotel.css' %}">
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Nos Activités</h2>
+
+<div class="row">
+    <!-- Piscine -->
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src="{% static 'images/piscine1.jpeg' %}" class="card-img-top" alt="Piscine intérieur">
+            <img src="{% static 'images/piscine2.jpg' %}" class="card-img-top" alt="Piscine extérieur 1">
+            <img src="{% static 'images/piscine3.jpg.avif' %}" class="card-img-top" alt="Piscine extérieur 2">
+            <div class="card-body">
+                <h5 class="card-title">Piscine</h5>
+                <p class="card-text">Plongez dans nos piscines luxueuses, idéales pour toute la famille.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jacuzzi -->
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src="{% static 'images/jacuzzi.jpg.webp' %}" class="card-img-top" alt="Jacuzzi">
+            <div class="card-body">
+                <h5 class="card-title">Jacuzzi</h5>
+                <p class="card-text">Détendez-vous dans nos jacuzzis chauffés pour une expérience relaxante.</p>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!-- Salle de sport -->
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src="{% static 'images/salledesport.jpg' %}" class="card-img-top" alt="Salle de Sport">
+            <div class="card-body">
+                <h5 class="card-title">Salle de Sport</h5>
+                <p class="card-text">Restez en forme avec nos équipements modernes dans notre salle de sport.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Discothèque -->
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src="{% static 'images/disco.jpg' %}" class="card-img-top" alt="Discothèque">
+            <div class="card-body">
+                <h5 class="card-title">Discothèque</h5>
+                <p class="card-text">Dansez toute la nuit dans notre discothèque animée.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plage -->
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src="{% static 'images/plage1.jpg' %}" class="card-img-top" alt="Plage">
+            <img src="{% static 'images/plage2.jpg' %}" class="card-img-top" alt="Plage">
+            <div class="card-body">
+                <h5 class="card-title">Plage</h5>
+                <p class="card-text">Profitez du soleil et du sable doré sur notre plage privée.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
